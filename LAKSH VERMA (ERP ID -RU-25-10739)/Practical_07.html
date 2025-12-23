@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Advanced CSS - Stylish Example</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f7fa;
+  }
+
+  header {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') 
+                center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+  }
+
+  header h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 1.1em;
+  }
+
+  .content {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .card {
+    background: #fff;
+    border: 3px solid #0077b6;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    width: 280px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  }
+
+  .card h3 {
+    color: #0077b6;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    color: #333;
+    line-height: 1.6;
+  }
+
+  footer {
+    text-align: center;
+    background: #0077b6;
+    color: white;
+    padding: 20px 10px;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Advanced CSS Design</h1>
+    <p>Showcasing Backgrounds, Borders, Margin, Padding, and Box Model</p>
+  </header>
+
+  <section class="content">
+    <div class="card">
+      <h3>Box Model</h3>
+      <p>Every element consists of margin, border, padding, and content. Adjusting these changes the layout spacing.</p>
+    </div>
+
+    <div class="card">
+      <h3>Background</h3>
+      <p>CSS allows solid colors, gradients, and images as backgrounds with control over position and size.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Designed with using Advanced CSS Concepts</p>
+  </footer>
+</body>
+</html>
+

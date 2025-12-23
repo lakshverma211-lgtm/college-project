@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form id="myForm" onsubmit="return validateForm()">
+    <label>Name:</label>
+    <input type="text" id="name" oninput="clearError('nameError')">
+    <span id="nameError" style="color:red"></span><br><br>
+
+    <label>Email:</label>
+    <input type="text" id="email" oninput="clearError('emailError')">
+    <span id="emailError" style="color:red"></span><br><br>
+
+    <label>Password:</label>
+    <input type="password" id="password" oninput="clearError('passError')">
+    <span id="passError" style="color:red"></span><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let pass = document.getElementById("password").value.trim();
+    let valid = true;
+
+    if (name === "") {
+        document.getElementById("nameError").innerHTML = "Name required";
+        valid = false;
+    }
+
+    if (!email.includes("@")) {
+        document.getElementById("emailError").innerHTML = "Enter valid email";
+        valid = false;
+    }
+
+    if (pass.length < 6) {
+        document.getElementById("passError").innerHTML = "Min 6 characters";
+        valid = false;
+    }
+
+    if (!valid) {
+        alert("Please fix errors!");
+    } else {
+        alert("Form submitted successfully!");
+    }
+
+    return valid;
+}
+
+// Clear message while typing
+function clearError(id) {
+    document.getElementById(id).innerHTML = "";
+}
+</script>
+
+</body>
+</html>

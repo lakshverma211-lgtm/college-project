@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Web Page</title>
+<style>
+  /* Base (Mobile-first) */
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f4f7fa;
+    color: #333;
+  }
+
+  header {
+    background: #007bff;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 900px;
+    margin: 1.5rem auto;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  .grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .card {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid #007bff;
+  }
+
+  /* Tablet View */
+  @media (min-width: 600px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Desktop View */
+  @media (min-width: 900px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    header {
+      text-align: left;
+      padding: 1.2rem 2rem;
+    }
+  }
+
+  footer {
+    text-align: center;
+    background: #007bff;
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Responsive Design Demo</h1>
+  <p>Mobile-first layout using flexible units & media queries</p>
+</header>
+
+<main class="container">
+  <section class="grid">
+    <div class="card">
+      <h3>Mobile-First</h3>
+      <p>Design starts simple and scales up for bigger screens.</p>
+    </div>
+    <div class="card">
+      <h3>Flexible Units</h3>
+      <p>Uses % and rem for smooth resizing across devices.</p>
+    </div>
+    <div class="card">
+      <h3>Media Queries</h3>
+      <p>Layout adjusts automatically for tablet and desktop.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Responsive Web Example</p>
+</footer>
+
+</body>
+</html>

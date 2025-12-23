@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple JS Logic</title>
+    <style>
+        body { 
+            font-family: sans-serif; 
+            padding: 20px; 
+            max-width: 600px;
+        }
+        .box { 
+            border: 1px solid #999; 
+            padding: 15px; 
+            margin-bottom: 20px; 
+            background: #f9f9f9;
+        }
+        button { 
+            padding: 5px 10px; 
+            cursor: pointer; 
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Simple Logic & Loops</h1>
+
+<!-- 1. IF / ELSE -->
+<div class="box">
+    <h3>1. If / Else</h3>
+    <p>Check if number is positive or negative:</p>
+    <input type="number" id="numInput" value="5">
+    <button onclick="checkNum()">Check</button>
+    <div id="res1" class="result"></div>
+</div>
+
+<!-- 2. FOR LOOP -->
+<div class="box">
+    <h3>2. For Loop</h3>
+    <p>Count from 1 to 5:</p>
+    <button onclick="runFor()">Run Loop</button>
+    <div id="res2" class="result"></div>
+</div>
+
+<!-- 3. WHILE LOOP -->
+<div class="box">
+    <h3>3. While Loop</h3>
+    <p>Countdown from 5 to 1:</p>
+    <button onclick="runWhile()">Start Countdown</button>
+    <div id="res3" class="result"></div>
+</div>
+
+<!-- 4. DO...WHILE LOOP -->
+<div class="box">
+    <h3>4. Do...While</h3>
+    <p>Keep rolling dice until we get a 6:</p>
+    <button onclick="runDoWhile()">Roll Dice</button>
+    <div id="res4" class="result"></div>
+</div>
+
+<script>
+    // 1. IF / ELSE
+    function checkNum() {
+        var n = document.getElementById("numInput").value;
+        var msg = "";
+
+        if (n > 0) {
+            msg = "Positive Number";
+        } else if (n < 0) {
+            msg = "Negative Number";
+        } else {
+            msg = "Zero";
+        }
+        document.getElementById("res1").innerText = msg;
+    }
+
+    // 2. FOR LOOP (Runs a set number of times)
+    function runFor() {
+        var text = "";
+        for (var i = 1; i <= 5; i++) {
+            text += i + " ";
+        }
+        document.getElementById("res2").innerText = text;
+    }
+
+    // 3. WHILE LOOP (Runs while condition is true)
+    function runWhile() {
+        var i = 5;
+        var text = "";
+        while (i > 0) {
+            text += i + "... ";
+            i--;
+        }
+        document.getElementById("res3").innerText = text + "Go!";
+    }
+
+    // 4. DO...WHILE (Runs at least once)
+    function runDoWhile() {
+        var roll;
+        var text = "";
+        
+        do {
+            roll = Math.floor(Math.random() * 6) + 1;
+            text += roll + " ";
+        } while (roll !== 6);
+        
+        document.getElementById("res4").innerText = "Rolled: " + text;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation Example</title>
+    <style>
+        #box {
+            width: 250px;
+            padding: 15px;
+            border: 2px solid black;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="mainTitle">Welcome to DOM Demo</h1>
+
+<p class="info">This text will be changed.</p>
+<p class="info">This is another line.</p>
+
+<div id="box">This is a box.</div>
+
+<button onclick="updateDOM()">Click to Manipulate DOM</button>
+
+<script>
+function updateDOM() {
+    // 1. getElementById()
+    document.getElementById("mainTitle").innerHTML = "Title Updated Using getElementById()";
+    document.getElementById("mainTitle").style.color = "blue";
+    document.getElementById("mainTitle").style.fontSize = "32px";
+
+    // 2. querySelector()
+    let firstPara = document.querySelector(".info");
+    firstPara.innerHTML = "First paragraph updated using querySelector().";
+    firstPara.style.background = "lightyellow";
+
+    // 3. Using innerHTML to change a box content
+    let box = document.getElementById("box");
+    box.innerHTML = "<b>Box content changed!</b><br>New content added.";
+
+    // Add one more effect
+    box.style.borderColor = "green";
+    box.style.background = "lightgreen";
+}
+</script>
+
+</body>
+</html>
